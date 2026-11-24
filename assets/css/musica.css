@@ -1,0 +1,114 @@
+#popular-view {
+    margin: 4em auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+    >div:first-child {
+        display: flex;
+        border-bottom: solid 2px;
+        label {
+            width: 100%;
+            text-align: center;
+            user-select: none;
+            cursor: pointer;
+            padding: 1em;
+            transition: background-color 0.2s ease;
+        }
+        label:hover {
+            background-color: rgb(23, 23, 25);
+        }
+        label:has(input:checked) {
+            font-weight: 600;
+        }
+        input { display: none;}
+    }
+    background-color: rgb(36, 36, 39);
+    color: whitesmoke;
+}
+
+.album-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    gap: 1em;
+    
+    .album-cover {
+        width: fit-content;
+        iframe {
+            display: none;
+            width: 20em;
+            aspect-ratio: 1 / 1;
+        }
+        img {
+            width: 20em;
+            height: 20em;
+        }
+    }
+    .album-cover:hover {
+        iframe {
+            display: initial;
+        }
+        img {
+            display: none;
+        }
+    }
+    .album-info {
+        
+        >div {
+            display: flex;
+            justify-content: space-between;
+            h3 {
+                margin: 0;
+            }
+        }
+    }
+}
+.album-card { display: none;}
+
+#popular-view:has(#album1:checked) #album-content1,
+#popular-view:has(#album2:checked) #album-content2,
+#popular-view:has(#album3:checked) #album-content3,
+#popular-view:has(#album4:checked) #album-content4 {
+    display: flex;
+}
+#listen-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5em;
+}
+#more-button {
+    margin: auto;
+    border: solid 2px;
+    padding: 0.5em 1em;
+    input {
+        display: none;
+    }
+}
+.hide-menu {
+    display: none;
+}
+.menu-icon {
+    width: 1.5em;
+    margin-right: 0.5em;
+}
+#more-menu {
+    flex-direction: column;
+    background-color: rgb(23, 23, 25);
+
+    width: 15.5em;
+    a {
+        display: flex;
+        color: whitesmoke;
+        padding: 0.5em 1em;
+        font-weight: 600;
+        align-items: center;
+    }
+}
+#listen-more:has(:checked) #more-menu {
+    position: absolute;
+    display: flex;
+    top: 49.5em;
+}
