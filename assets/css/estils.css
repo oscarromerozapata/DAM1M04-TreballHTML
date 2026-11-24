@@ -1,7 +1,6 @@
 body{
     font-family: ubuntu;
     margin:0 ;
-    background-color: black;
 }
 a {
     text-decoration: none;
@@ -39,7 +38,7 @@ a {
     display: none;
     position: absolute;
     right:7%;
-    top:3%;
+    top:25%;
     flex-direction: column;
     font-size:20px;
 }
