@@ -37,3 +37,6 @@ footer {
     height: 1em;
     margin-right: 0.2em;
 }
+.invert-image-color {
+    filter: invert();
+}
