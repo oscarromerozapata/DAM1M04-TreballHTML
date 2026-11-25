@@ -1,3 +1,7 @@
+h1 {
+    margin: auto;
+    width: 80%;
+}
 #popular-view {
     margin: 4em auto;
     width: 80%;
@@ -79,6 +83,7 @@
     input {
         display: none;
     }
+    anchor-name: --more-menu-anchor;
 }
 .hide-menu {
     display: none;
@@ -90,8 +95,10 @@
 #more-menu {
     flex-direction: column;
     background-color: rgb(23, 23, 25);
-
+    position-anchor: --more-menu-anchor;
+    position: absolute;
     width: 15.5em;
+    margin-bottom: 0.5em;
     a {
         display: flex;
         color: whitesmoke;
@@ -99,9 +106,9 @@
         font-weight: 600;
         align-items: center;
     }
+    bottom: anchor(top);
 }
 #listen-more:has(:checked) #more-menu {
-    position: absolute;
     display: flex;
-    top: 42em;
+
 }
