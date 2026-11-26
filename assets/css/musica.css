@@ -33,27 +33,17 @@
     align-items: center;
     padding: 2em;
     gap: 1em;
+    height: fit-content;
+    div:first-child {
+        display: flex;
+        .album-cover {
+            width: 50%;
+            height: 100%;
+            margin-right: 1em;
+        }
+    }
     
-    .album-cover {
-        width: fit-content;
-        iframe {
-            display: none;
-            width: 20em;
-            aspect-ratio: 1 / 1;
-        }
-        img {
-            width: 20em;
-            height: 20em;
-        }
-    }
-    .album-cover:hover {
-        iframe {
-            display: initial;
-        }
-        img {
-            display: none;
-        }
-    }
+
     .album-info {
         
         >div {
@@ -63,6 +53,9 @@
                 margin: 0;
             }
         }
+    }
+    iframe {
+        width: 100%;
     }
 }
 .album-card { display: none;}
@@ -110,5 +103,5 @@
 #listen-more:has(:checked) #more-menu {
     position: absolute;
     display: flex;
-    top: 49.5em;
+    top: 42em;
 }
