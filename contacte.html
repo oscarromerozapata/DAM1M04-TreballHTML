@@ -39,21 +39,16 @@
         <div id="form-address">
             <form action="">
                 <h3>Contacto</h3>
-                <label for="">Nombre: </label>
-                <input type="text" name="" id="">
-                <label for="">Telefono: </label>
-                <input type="tel" name="" id="">
-                <label for="">Correo Electronico</label>
-                <input type="email" name="" id="">
-                <label for="">Motivo del Contacto</label>
-                <input type="text" name="" id="">
-                <label for="">Mensaje</label>
-                <textarea name="" id=""></textarea>
+                <input type="text" name="name" placeholder="Nombre" pattern="[A-Za-zÀ-ÿ\s]{2,20}">
+                <input type="tel" name="phonenumber" placeholder="Telefono">
+                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="reason" placeholder="Asunto">
+                <textarea name="message" placeholder="Mensaje"></textarea>
                 <input type="submit" value="Enviar Mensaje">
             </form>
             <div>
-                <p>Direccion: Av. de la Aldehuela, 37003 Salamanca</p>
-                <iframe src="" frameborder="0"></iframe>
+                <p><strong>Direccion:</strong> Av. de la Aldehuela, 37003 Salamanca</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d731.8007004403892!2d-5.648803097352759!3d40.96009921685056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3f2674faffffff%3A0xb006d682330e8d14!2sParque%20de%20Nuestro%20Padre%20Jes%C3%BAs%20del%20Perd%C3%B3n!5e0!3m2!1ses!2ses!4v1795702521886!5m2!1ses!2ses" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
         </div>
     </main>
