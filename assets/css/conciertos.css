@@ -1,0 +1,56 @@
+h1 {
+    text-align: center;
+}
+main {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5em;
+}
+.concert-entry {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid whitesmoke;
+    padding: 0.2em;
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+    div:first-child {
+        span {
+            font-weight: 600;
+        }
+        p {
+            color: grey;
+        }
+    }
+    div:last-child {
+        width: 25%;
+        h3 {
+            text-align: center;
+            margin: 0;
+        }
+        a {
+            margin-top: 0.5em;
+            text-align: center;
+            padding: 0.5em 1.5em;
+            background-color: black;
+            color: white;
+        }
+    }
+    .availability:after {
+        content: " Disponible";
+        color: green;
+    }
+
+}
+.unavailable {
+    background-color: whitesmoke;
+    opacity: 0.8;
+    .availability:after {
+        content: " Agotado";
+        color: red;
+    }
+    a {
+        opacity: 0.6;
+    }
+}
