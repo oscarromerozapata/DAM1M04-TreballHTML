@@ -1,0 +1,16 @@
+.imagenhero{
+    width:100%;
+    opacity: 0.5;
+}
+.hero{
+    min-height:10000px;
+    background-image: url("../img/blake hero.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;  
+    background-position: center;
+}
+.espacio{
+    background-color: black;
+    min-height: 1000px;
+}
