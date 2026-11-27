@@ -50,20 +50,23 @@ a {
     border: solid 1px #FFD700;
     border-radius: 10px;
     opacity: 0;
-    transition:opacity 0.3s ease;
+    visibility: hidden;
+    transition:opacity 0.8s ease, visibility 0.8s;
 }
 
 .toggle {
     display: none;
 }
-.info{
+.menumovilinfo{
+    margin:5px 0;
     color:white;
 }
-.info::after{
+.menumovilinfo::after{
     content:"▾";
 }
 .toggle:checked ~ .menudesplegable {
     opacity: 1;
+    visibility: visible;
 }
 
 @media(max-width:550px){
