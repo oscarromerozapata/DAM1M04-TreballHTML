@@ -1,11 +1,5 @@
-h1 {
-    text-align: center;
-}
-main {
-    width: 80%;
-    margin: auto;
-    margin-bottom: 5em;
-}
+
+
 #concert-filter {
     display: flex;
     align-items: center;
@@ -21,7 +15,13 @@ main {
         padding: 0.2em 0;
         border: 2px solid whitesmoke;
         border-top: 0;
-        transition: border-color 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        user-select: none;
+        cursor: pointer;
+    }
+    label:hover {
+        border-color: grey;
+        background-color: whitesmoke;
     }
     label:has(input:checked) {
         border-color: black;

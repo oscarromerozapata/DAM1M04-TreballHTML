@@ -1,13 +1,7 @@
-h1 {
-    text-align: center;
-}
-main {
-    width: 80%;
-    margin: auto;
-}
 #email-contacts {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 4em;
     >div {
         width: 30%;
@@ -35,14 +29,16 @@ main {
 #form-address {
     display: flex;
     justify-content: space-between;
-    form {
+    align-items: center;
+    form, >div {
         width: 45%;
+    }
+    form {
         display: flex;
         flex-direction: column;
         align-items: center;
         border: 2px solid whitesmoke;
-
-        padding: 1.5em 0.5em;
+        padding: 1.5em 2em;
         input, textarea {
             margin-bottom: 1em;
             border: 0;
@@ -83,7 +79,6 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 45%;
         padding: 1.5em 0.5em;
         iframe {
             height: 100%;
@@ -92,4 +87,36 @@ main {
     }
     
     margin-bottom: 4em;
+}
+@media (max-width: 768px) {
+    #email-contacts {
+        flex-direction: column;
+        >div {
+            width: 100%;
+            h3 {
+                font-size: 1.6em;
+            }
+            a {
+                font-size: 1em;
+                >img {
+                height: 6em;
+                }
+            }
+        }
+    }
+    #form-address {
+        flex-direction: column-reverse;
+        form, >div {
+            width: 100%;
+        }
+        form {
+            input, textarea {
+                font-size: 1.2em;
+            }
+        }
+        >div {
+            height: 24em;
+            font-size: 1.2em;
+        }
+    }
 }

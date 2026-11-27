@@ -1,29 +1,29 @@
-h1 {
-    margin: auto;
-    width: 80%;
-}
 #popular-view {
-    margin: 4em auto;
-    width: 80%;
+    margin: 4em 0;
     display: flex;
     flex-direction: column;
     
     >div:first-child {
         display: flex;
         border-bottom: solid 2px;
+        overflow: hidden;
         label {
+            color: goldenrod;
             width: 100%;
             text-align: center;
             user-select: none;
             cursor: pointer;
             padding: 1em;
-            transition: background-color 0.2s ease;
+            transition: all 0.2s ease;
         }
         label:hover {
             background-color: rgb(23, 23, 25);
         }
         label:has(input:checked) {
+            transform: scale(110%);
+            background-color: black;
             font-weight: 600;
+            
         }
         input { display: none;}
     }
@@ -81,12 +81,17 @@ h1 {
 }
 #more-button {
     margin: auto;
-    border: solid 2px;
+    border: solid 2px black;
     padding: 0.5em 1em;
     input {
         display: none;
     }
     anchor-name: --more-menu-anchor;
+    transition: all .2s ease-in;
+}
+#more-button:hover {
+    background-color: black;
+    color: white;
 }
 .hide-menu {
     display: none;
