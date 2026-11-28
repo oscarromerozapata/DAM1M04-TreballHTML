@@ -22,7 +22,6 @@ a {
 }
 .cabecera>a>img{
     height: 50px;
-    
 }
 .cabecera>a:nth-child(1){
     margin-right: auto;
@@ -31,8 +30,18 @@ a {
     display:flex;
 }
 .menumovil{
-    margin:5px 0;
+    padding:5px 0;
     color:white;
+}
+
+.menumovil:hover{
+    background-color: rgb(44, 44, 44);
+}
+.menumovil:hover:first-child{
+    border-radius:10px 10px 0 0;
+}
+.menumovil:hover:last-child{
+    border-radius:0 0 10px 10px;
 }
 .desplegable_movil{
     display: none;
@@ -45,13 +54,13 @@ a {
 .menudesplegable {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-align: center;
     background-color: rgb(12, 12, 23);
     border: solid 1px #FFD700;
     border-radius: 10px;
     opacity: 0;
     visibility: hidden;
-    transition:opacity 0.8s ease, visibility 0.8s;
+    transition:opacity 0.5s ease, visibility 0.5s;
 }
 
 .toggle {
@@ -69,7 +78,7 @@ a {
     visibility: visible;
 }
 
-@media(max-width:550px){
+@media(max-width:580px){
     .menu{
         display:none;
     }
