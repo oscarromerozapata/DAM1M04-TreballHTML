@@ -1,4 +1,4 @@
-/* Animación con scroll*/
+/* -----Animación con scroll-----*/
 .progreso{
     position: fixed;
     top: 0;
@@ -22,14 +22,14 @@
     }
 }
 
-/* Hero */
+/* -----Hero----- */
 .imagenhero{
     width: 100%;
     opacity: 0.5;
 }
 
 .hero{
-    min-height: 70dvh;
+    min-height: 90dvh;
     background-image:
         linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
         url("../img/blake_hero.jpg");
@@ -37,21 +37,26 @@
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    padding-top: 20dvh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-
+.hero_items{
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+}
 .hero_caja{
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10%;
     width: 400px;
+
 }
 
 .hero_titulo{
-    order: 3;
     background: linear-gradient(#121223, black);
     color: white;
     border-radius: 10px;
@@ -61,9 +66,8 @@
 }
 
 
-/* menu desplegable */
+/* -----menu desplegable----- */
 .hero_desplegable{
-    order: 4;
     position: relative;
     width: fit-content;
 }
@@ -145,11 +149,13 @@
     to   { opacity: 1; transform: translateX(0); }
 }
 
-/* ===== Lanzamiento ===== */
+/* -----album----- */
 .album{
     background: linear-gradient(#121223, black);
     color: white;
     padding: 96px 32px;
+    display: flex;
+    justify-content: center;
 }
 
 .albumcard{
@@ -157,6 +163,7 @@
     display: flex;
     padding: 20px;
     border-radius: 15px;
+    max-width: 1200px;
 }
 
 .albumportada{
@@ -180,24 +187,72 @@
     }
 }
 
-/* ===== Tour ===== */
+/* -----Tour----- */
 .tour{
     padding: 140px 32px;
     display: flex;
     flex-direction: column;
 }
 
+
+
+.tour {
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
 .tour h1{
     text-align: center;
     font-size: 100px;
 }
 
-/* ===== Accesibilidad: sin animaciones si el usuario las desactiva ===== */
-@media (prefers-reduced-motion: reduce){
-    .progreso,
-    .animacion span,
-    .hero_escuchar_menu,
-    .plataforma{
-        animation: none !important;
-    }
+
+.subhead {
+    display: flex;
+    font-weight: 700;
 }
+.fechas {
+      list-style: none;
+      border-top: 1px solid #ddd;
+    }
+
+    .fecha {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .fecha-info { font-size: 1rem; line-height: 1.45; }
+    .fecha-info .dia,
+    .fecha-info .lugar { font-weight: 700; display: block; }
+
+    .botones {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 46px;
+      border: 1px solid #000;
+    }
+    .btn-entradas { 
+        background: #000; 
+        color: #fff; 
+    }
+    .btn-rsvp { 
+        background: #fff; 
+        color: #000; 
+    }
+
+    @media (max-width: 600px) {
+      h1 {margin-bottom: 36px; }
+      .fecha { flex-direction: column; align-items: flex-start; }
+      .botones { width: 100%; }
+      .btn { width: 100%; }
+    }
