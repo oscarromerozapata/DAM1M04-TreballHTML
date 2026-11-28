@@ -73,6 +73,7 @@ a {
 .menumovilinfo::after{
     content:"▾";
 }
+
 .toggle:checked ~ .menudesplegable {
     opacity: 1;
     visibility: visible;

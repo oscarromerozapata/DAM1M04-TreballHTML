@@ -1,58 +1,164 @@
-body{
-    background-color:yellow;
+/* Animación con scroll*/
+.progreso{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #FFD700;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 1000;
 }
+
+@keyframes crece{
+    to { transform: scaleX(1); }
+}
+
+@supports (animation-timeline: view()){
+    .progreso{
+        animation: crece linear;
+        animation-timeline: scroll(block);
+    }
+}
+
+/* Hero */
 .imagenhero{
-    width:100%;
+    width: 100%;
     opacity: 0.5;
 }
+
 .hero{
-    min-height: 100dvh;
-    background-image: url("../img/blake hero.jpg");
+    min-height: 70dvh;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)),
+        url("../img/blake_hero.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;  
+    background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
-
 }
+
+.hero_caja{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10%;
+    width: 400px;
+}
+
 .hero_titulo{
+    order: 3;
     background: linear-gradient(#121223, black);
     color: white;
     border-radius: 10px;
-    margin-top: 30dvh;
-    margin-left: auto;
-    margin-right: 20px;
     padding: 10px;
     text-align: center;
     font-size: 55px;
-    width: 400px;
 }
-.spotify{
-    background: ;
+
+
+/* menu desplegable */
+.hero_desplegable{
+    order: 4;
+    position: relative;
+    width: fit-content;
+}
+
+.hero_escuchar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
     color: white;
-    border-radius: 10px;
-    margin-left: auto;
-    margin-right: 20px;
     padding: 10px;
-    text-align: center;
     font-size: 20px;
-    width: 400px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(#121223, black);
+    border: 1px solid #FFD700;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
-/*lanzamiento*/
+
+.hero_escuchar object{
+    width: 24px;
+    height: 24px;
+}
+
+.hero_escuchar::after{
+    content: "▾";
+    transition: transform 0.3s;
+}
+
+.hero_desplegable:hover .hero_escuchar::after{
+    transform: rotate(180deg);
+}
+
+.hero_escuchar_menu{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(12, 12, 23);
+    border: 1px solid #f2c200;
+    border-radius: 10px;
+    transform-origin: top ;
+}
+
+.hero_desplegable:hover .hero_escuchar_menu{
+    display: flex;
+    animation: abrirMenu 0.3s ease-out;
+}
+
+@keyframes abrirMenu{
+    from {
+        opacity: 0;
+        transform: translateY(-20px) ;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.plataforma{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 4px 8px;
+}
+
+.plataforma:hover{
+    background-color: rgb(44, 44, 44);
+    border-radius: 10px;
+}
+
+.hero_desplegable:hover .plataforma{
+    animation: entraPlataforma 0.3s ease-out both;
+}
+
+@keyframes entraPlataforma{
+    from { opacity: 0; transform: translateX(-12px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== Lanzamiento ===== */
 .album{
     background: linear-gradient(#121223, black);
     color: white;
     padding: 96px 32px;
-
 }
+
 .albumcard{
     border: 1px solid #FFD700;
-    padding: 10px;
     display: flex;
-    
+    padding: 20px;
     border-radius: 15px;
 }
+
 .albumportada{
     max-width: 300px;
     width: 100%;
@@ -60,24 +166,38 @@ body{
     margin-right: 15px;
 }
 
-
-
-
-
-
-
-
-/*Tour*/
-.tour{
-    padding:140px 32px;
-    display: flex;
-    flex-direction: column;
-    
-    
+.diario_spotify{
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
-.tour h1 {
+@media (max-width: 715px){
+    .albumcard{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* ===== Tour ===== */
+.tour{
+    padding: 140px 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tour h1{
     text-align: center;
-    font-size: 100px
-    
+    font-size: 100px;
+}
+
+/* ===== Accesibilidad: sin animaciones si el usuario las desactiva ===== */
+@media (prefers-reduced-motion: reduce){
+    .progreso,
+    .animacion span,
+    .hero_escuchar_menu,
+    .plataforma{
+        animation: none !important;
+    }
 }
