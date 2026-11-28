@@ -1,9 +1,43 @@
 body{
-    font-family: ubuntu;
-    margin:0 ;
+    font-family: "Ubuntu";
+    margin: 0;
 }
 a {
     text-decoration: none;
+}
+footer {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid gainsboro;
+    padding:  2em 1em;
+    >span {
+        color: grey;
+    }
+    >div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1em;
+        >a {
+            
+            display: flex;
+            color: grey;
+            transition: color 0.1s ease; 
+            align-items: center;
+        }
+        >a:hover {
+            color: black;
+        }
+    }
+}
+.footer-icon {
+    height: 1em;
+    margin-right: 0.2em;
+}
+.invert-image-color {
+    filter: invert();
 }
 .cabecera{
     background-color: black;

@@ -1,0 +1,100 @@
+h1 {
+    text-align: center;
+}
+main {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5em;
+}
+#concert-filter {
+    display: flex;
+    align-items: center;
+    span {
+        margin-right: 1em;
+    }
+    label {
+        input {
+            display: none;
+        }
+        width: 100%;
+        text-align: center;
+        padding: 0.2em 0;
+        border: 2px solid whitesmoke;
+        border-top: 0;
+        transition: border-color 0.2s ease-in;
+    }
+    label:has(input:checked) {
+        border-color: black;
+    }
+    margin-bottom: 2em;
+}
+.concert-entry {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid whitesmoke;
+    padding: 0.2em;
+    transition: all .3s ease-in-out;
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+    div:first-child {
+        span {
+            font-weight: 600;
+        }
+        p {
+            color: grey;
+        }
+    }
+    div:last-child {
+        width: 25%;
+        h3 {
+            text-align: center;
+            margin: 0;
+        }
+        a {
+            margin-top: 0.5em;
+            text-align: center;
+            padding: 0.5em 1.5em;
+            background-color: black;
+            color: white;
+            border: black solid 2px;
+            transition: all .2s ease-in;
+        }
+        a:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+    .availability:after {
+        content: " Disponible";
+        color: green;
+    }
+
+}
+.concert-entry:hover {
+    transform: translateX(1em);
+}
+.unavailable {
+    background-color: whitesmoke;
+    opacity: 0.8;
+    .availability:after {
+        content: " Agotado";
+        color: red;
+    }
+    a {
+        pointer-events: none; /*Desactiva el link*/
+        opacity: 0.6;
+    }
+}
+main:has(#show-available-filter:checked) .unavailable {
+    display: none;
+}
+main:has(#show-unavailable-filter:checked) {
+    .concert-entry {
+        display: none;
+    }
+    .unavailable {
+        display: flex;
+    }
+}
